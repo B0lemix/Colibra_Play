@@ -1,0 +1,32 @@
+---
+import BotonReproducir from "../components/BotonReproducir.astro";
+import BotonInformacion from "../components/BotonInformacion.astro";
+---
+
+<!-- ** Portada inicial Colibra Play con títulos recomendados ** -->
+<section class="w-full h-[70rem] border-2 border-purple-400">
+  <img
+    src="/portada-prueba.jpg"
+    class="absolute w-full h-[70rem] aspect-auto -z-50"
+    alt=""
+    srcset=""
+  />
+
+  <div class="flex flex-col w-full h-full justify-end pb-96 gap-8 px-80">
+    <h1 class="text-7xl text-white">Nombre</h1>
+
+    <h2 class="text-3xl text-white">categoria</h2>
+
+    <p class="text-xl text-gray-400 tracking-wide text-pretty w-2/4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+      asperiores eos dignissimos veritatis pariatur ullam vel repellendus
+      deleniti minima molestias, cum ducimus tempora facere ratione aut hic.
+      Eum, aliquid provident!
+    </p>
+
+    <div class="flex flex-row gap-8">
+      <BotonReproducir />
+      <BotonInformacion />
+    </div>
+  </div>
+</section>
