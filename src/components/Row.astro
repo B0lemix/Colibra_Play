@@ -1,0 +1,30 @@
+---
+import Card from "../components/Card.astro";
+interface Props {
+  title: string;
+  data: object;
+}
+
+const { title, data } = Astro.props;
+
+console.log(data, "hey");
+---
+
+<section class="w-full px-12 py-8">
+  <h3 class="text-3xl font-workSans mb-8">{title}</h3>
+
+  <ul
+    class="flex flex-no-wrap overflow-x-auto overflow-y-hidden scrolling-touch items-start mb-8"
+  >
+    {
+      data.map((element) => (
+        <Card
+          key={element.id}
+          title={element.title}
+          url={element.url}
+          thumbnailUrl={element.thumbnailUrl}
+        />
+      ))
+    }
+  </ul>
+</section>

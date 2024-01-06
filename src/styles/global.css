@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "WorkSans";
+  src: url("../fonts/WorkSans.ttf");
+}
