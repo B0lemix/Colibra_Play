@@ -21,7 +21,7 @@ const photos = await getPhotos();
 <Layout title="Colibra Play">
   <main class="w-full h-screen">
     <Header />
-    <Portada />
+    <Portada data={photos} />
   
     <Row title="Popular en Colibra Play" data={photos} />
 
