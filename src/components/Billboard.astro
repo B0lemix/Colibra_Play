@@ -1,7 +1,7 @@
 ---
-import BotonReproducir from "../components/BotonReproducir.astro";
-import BotonInformacion from "../components/BotonInformacion.astro";
-import Row from "../components/Row.astro";
+import BotonReproducir from "./BotonReproducir.astro";
+import BotonInformacion from "./BotonInformacion.astro";
+import Row from "./Row.astro";
 
 interface Props {
   data: object;
@@ -9,10 +9,39 @@ interface Props {
 
 const { data } = Astro.props;
 
+console.log('data',data);
+
+
 ---
 
+<section class="relative h-[56.25vw]">
+  <video 
+    class="w-full h-[56.25vw] object-cover brightness-[60%]"
+    autoplay
+    muted
+    loop
+    poster={data?.thumbnailUrl} src={data?.contentUrl}></video>
+
+    <div class="absolute top-[30%] md:top-[40%] ml-4 md:ml-16">
+      <p class="text-white text-xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl">
+        {data?.title}
+       </p>
+
+        <p class="text-white text-[8px]  md:text-lg mt-3 md:mt-8 w-[80%] md:w-{80%] lg:w-[50%] drop-shadow-xl">
+          {data?.description} </p>
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
 <!-- ** Portada inicial Colibra Play con títulos recomendados ** -->
-<section class="w-full h-[50rem] border-2 border-purple-400">
+<!-- <section class="w-full h-[50rem] border-2 border-purple-400">
   <img
     src="/portada-prueba.jpg"
     class="absolute w-full h-[50rem] aspect-auto -z-50"
@@ -41,3 +70,4 @@ const { data } = Astro.props;
     <Row title="Popular en Colibra Play" data={data} />
   </div>
 </section>
+ -->

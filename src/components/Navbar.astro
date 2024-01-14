@@ -1,0 +1,62 @@
+---
+import NavbarItem from "./NavbarItem.astro";
+import MobileMenu from "./MobileMenu.astro";
+import ChevronDown from "./Iconos/Chevron-down.astro";
+import Search from "./Iconos/Search.astro";
+
+let showMobileMenu = false;
+---
+
+<nav class="w-full fixed z-40">
+  <div
+    class="px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 bg-zinc-900 bg-opacity-90"
+  >
+    <img class="h-4 lg:h-10" src="/logo.svg" alt="logo Colibra Play" />
+
+    <div class="flex-row ml-8 gap-7 hidden lg:flex">
+      <NavbarItem label="Inicio" />
+      <NavbarItem label="Documentales" />
+      <NavbarItem label="Radio Online" />
+      <NavbarItem label="Videos" />
+    </div>
+
+    <div
+      class="alert lg:hidden flex flex-rwo items-center gap-2 ml-8 cursor-pointer relative"
+    >
+      <p class="text-white ">Explorar</p>
+      <button id="chevronDown" class="text-white transition">
+        <ChevronDown />
+      </button>
+
+      <div class="hidden " id="MobileContainer">
+        <MobileMenu visible={showMobileMenu} />
+        <!-- visible={showMobileMenu}  -->
+      </div>
+    </div>
+    <div class="flex flex-row ml-auto gap-7 items-center"></div>
+    <div
+      class="text-gray-200 hover:text-gray-300 cursor-pointer flex flex-row gap-4"
+    >
+      Buscar
+      <Search />
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Find all buttons with the `alert` class on the page.
+
+  let showMobileMenu = false;
+  const buttons = document.querySelectorAll("div.alert");
+  const mobileContainer = document.getElementById("MobileContainer");
+  const chevronDown = document.getElementById("chevronDown");
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showMobileMenu = !showMobileMenu;
+      mobileContainer.classList.toggle("hidden");
+      chevronDown.classList.toggle("rotate-180");
+    });
+  });
+</script>

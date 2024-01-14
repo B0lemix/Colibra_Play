@@ -13,8 +13,13 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/node": "^7.0.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@prisma/client": "^5.7.1",
     "astro": "^4.0.8",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.7",
+    "prisma": "^5.7.1"
   }
 }
