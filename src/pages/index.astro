@@ -7,15 +7,22 @@ import Billboard from "../components/Billboard.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 
-const getData =  async () => {
-  const response =  await fetch(`${Astro.url}/api/random`);
+
+const data = await fetch(`${Astro.url}/api/random`).then((response) =>
+  response.json()
+);
+
+console.log(data);
+
+/* const getData =  async () => {
+  const response =  await fetch(`${Astro.url}/api/random`)
   const data =  response.json();
   return data;
 
 
 };
-
-const content = await getData();
+ */
+/* const content = await getData(); */
 
 /* const content = {
   id: '659afe4de4b85c62b6ff7d1f',
@@ -28,14 +35,14 @@ const content = await getData();
   thumbnailUrl: 'http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg'
 }
  */
-console.log(content);
+/* console.log(content); */
 ---
 
 <Layout title="Colibra Play">
   <main class="w-full h-screen">
     <Navbar />
 
-    {content && <Billboard data={content} /> }
+    {data && <Billboard data={data} /> }
     
 
 <!--     <Row title="Popular en Colibra Play" data={content} />
