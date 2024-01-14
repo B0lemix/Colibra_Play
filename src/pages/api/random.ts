@@ -1,4 +1,5 @@
 import prismadb from '../../../lib/prismadb'
+export const prerender = false;
 
 
 export async function GET({ params }) {
