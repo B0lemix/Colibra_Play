@@ -5,10 +5,7 @@ export async function GET({ request }) {
   const contentCount = await prismadb.content.count();
   const randomIndex = Math.floor(Math.random() * contentCount);
 
-  const randomContent = await prismadb.content.findMany({
-    take: 1,
-    skip: randomIndex,
-  });
+  const randomContent = await prismadb.content.findMany();
 
   if (contentCount === 0) {
     return new Response(null, {
