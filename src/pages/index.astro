@@ -6,17 +6,26 @@ import Billboard from "../components/Billboard.astro";
 /* import Row from "../components/Row.astro"; */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
-
+/* 
 const getData = async () => {
   const response = await fetch("http://localhost:4321/api/random");
-  /*   console.log(response); */
   const data = await response.json();
   return data;
-  /*   
- return data.slice(0, 10); // Obtiene los primeros 10 objetos del array */
+
+
 };
 
-const content = await getData();
+const content = await getData(); */
+
+const content = {
+  id: '659afe4de4b85c62b6ff7d1f',
+  type: 'Movie',
+  title: 'Big Buck Bunny',
+  description: 'Three rodents amuse themselves by harassing creatures of the forest. However, when they mess with a bunny, he decides to teach them a lesson.',
+  contentUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+  genre: 'Comedy',
+  duration: '10 minutes'
+}
 
 console.log(content);
 ---
