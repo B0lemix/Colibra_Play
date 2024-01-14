@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from "../layouts/Layout.astro";
 /* import Header from "../components/Header.astro"; */
 import Footer from "../components/Footer.astro";
@@ -8,7 +10,7 @@ import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 
 const getData = async () => {
-  const response = await fetch("http://localhost:4321//api/random");
+  const response = await fetch("http://localhost:4321/api/random");
   /*   console.log(response); */
   const data = await response.json();
   return data;
