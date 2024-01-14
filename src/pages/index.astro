@@ -8,9 +8,9 @@ import Billboard from "../components/Billboard.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 
-const getData = async () => {
-  const response = await fetch(`${Astro.url}/api/random`);
-  const data = await response.json();
+const getData =  async () => {
+  const response =  await fetch(`${Astro.url}/api/random`);
+  const data =  response.json();
   return data;
 
 
