@@ -1,4 +1,4 @@
-const prerender=false
+export const prerender = false;
 
 import prismadb from "../../../lib/prismadb";
 export async function GET({ request }) {
