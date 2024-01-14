@@ -1,7 +1,7 @@
 const prerender=false
 
 import prismadb from "../../../lib/prismadb";
-export async function GET() {
+export async function GET({ request }) {
   const contentCount = await prismadb.content.count();
   const randomIndex = Math.floor(Math.random() * contentCount);
 
