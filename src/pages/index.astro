@@ -1,4 +1,7 @@
 ---
+
+const prerender=false
+
 import Layout from "../layouts/Layout.astro";
 /* import Header from "../components/Header.astro"; */
 import Footer from "../components/Footer.astro";
@@ -37,7 +40,7 @@ console.log(content);
 
     {content && <Billboard data={content} /> }
     
-    
+
 <!--     <Row title="Popular en Colibra Play" data={content} />
 
     <Row title="Documentales" data={content} />
