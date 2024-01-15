@@ -5,7 +5,7 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'hybrid',
   integrations: [tailwind()],
   adapter: node({
     mode:"standalone"
