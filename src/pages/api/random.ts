@@ -1,7 +1,7 @@
 import prismadb from "../../../lib/prismadb";
-
-
-export async function GET({  params, request  })  {
+import type { APIRoute } from "astro";
+ 
+export const GET: APIRoute = async  ({  params, request  })  =>  {
  const contentCount = await prismadb.content.count();
  const randomIndex = Math.floor(Math.random() * contentCount);
 
@@ -9,12 +9,12 @@ export async function GET({  params, request  })  {
     take: 1,
     skip: randomIndex,
   });
-  if (contentCount === 0) {
+/*   if (contentCount === 0) {
     return new Response(null, {
       status: 404,
       statusText: "No Encontrado",
     });
-  }
+  } */
 
 
  return new Response(JSON.stringify(randomContent[0]), {
