@@ -1,9 +1,7 @@
----
 import prismadb from "../../../lib/prismadb";
-import type { APIRoute } from "astro";
 
 
-export const GET: APIRoute = async function get({ params, request }) {
+export async function GET({  params, request  })  {
  const contentCount = await prismadb.content.count();
  const randomIndex = Math.floor(Math.random() * contentCount);
 
@@ -53,6 +51,3 @@ export async function GET({  params, request  }) {
     },
   });
 } */
-
----
-API
