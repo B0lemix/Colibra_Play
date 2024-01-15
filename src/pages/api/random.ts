@@ -1,4 +1,4 @@
-/* import prismadb from "../../../lib/prismadb";
+import prismadb from "../../../lib/prismadb";
 export async function GET({  params, request  }) {
   const contentCount = await prismadb.content.count();
   const randomIndex = Math.floor(Math.random() * contentCount);
@@ -22,4 +22,3 @@ export async function GET({  params, request  }) {
     },
   });
 }
- */
