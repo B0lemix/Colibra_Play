@@ -40,6 +40,7 @@ const content = {
 <Layout title="Colibra Play">
   <main class="w-full h-screen">
     <Navbar />
+    {`${Astro.url}/api/random`}
 
     {content && <Billboard data={content} /> }
     
