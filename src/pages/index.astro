@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 /* import Header from "../components/Header.astro"; */
 import Footer from "../components/Footer.astro";
-/* import Billboard from "../components/Billboard.astro"; */
+import Billboard from "../components/Billboard.astro";
 /* import Row from "../components/Row.astro"; */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
@@ -21,7 +21,7 @@ console.log(data); */
 };
  */
 /* const content = await getData(); */
-/* 
+
 const content = {
   id: "659afe4de4b85c62b6ff7d1f",
   type: "Movie",
@@ -33,14 +33,16 @@ const content = {
   genre: "Comedy",
   duration: "10 minutes",
   thumbnailUrl: "http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg",
-}; */
+};
+
+console.log(content);
 ---
 
 <Layout title="Colibra Play">
   <main class="w-full h-screen">
     <Navbar />
 
- <!--    <Billboard data={content} /> -->
+    {content && <Billboard data={content} />}
 
     <!--     <Row title="Popular en Colibra Play" data={content} />
 
