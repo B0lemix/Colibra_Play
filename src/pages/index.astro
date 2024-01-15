@@ -11,7 +11,7 @@ import Navbar from "../components/Navbar.astro";
 const data = await fetch(`${Astro.url}/api/random`).then((response) => response.json());
 
 
-console.log(data);
+console.log(data,"url");
 
 /* const getData =  async () => {
   const response =  await fetch(`${Astro.url}/api/random`)
@@ -23,7 +23,7 @@ console.log(data);
  */
 /* const content = await getData(); */
 
-/* const content = {
+const content = {
   id: '659afe4de4b85c62b6ff7d1f',
   type: 'Movie',
   title: 'Big Buck Bunny',
@@ -33,15 +33,15 @@ console.log(data);
   duration: '10 minutes',
   thumbnailUrl: 'http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg'
 }
- */
-/* console.log(content); */
+
+
 ---
 
 <Layout title="Colibra Play">
   <main class="w-full h-screen">
     <Navbar />
 
-    {data && <Billboard data={data} /> }
+    {content && <Billboard data={content} /> }
     
 
 <!--     <Row title="Popular en Colibra Play" data={content} />
