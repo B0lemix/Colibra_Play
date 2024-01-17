@@ -20,7 +20,9 @@ export const GET: APIRoute = async  ({  params, request  })  =>  {
 /* JSON.stringify(randomContent[0]) */
  return new Response(JSON.stringify(randomContent), {
     status: 200,
-    headers: {
+   headers: {
+    'Access-Control-Allow-Origin': '*', // Replace * with the appropriate domain
+    'Access-Control-Allow-Headers': 'Content-Type',
       "Content-Type": "application/json",
     },
   });
