@@ -2,12 +2,12 @@ import prismadb from "../../../lib/prismadb";
 import type { APIRoute } from "astro";
  
 export const GET: APIRoute = async  ({  params, request  })  =>  {
- const contentCount = await prismadb.content.count();
- const randomIndex = Math.floor(Math.random() * contentCount);
+/*  const contentCount = await prismadb.content.count();
+ const randomIndex = Math.floor(Math.random() * contentCount); */
 
   const randomContent = await prismadb.content.findMany({
     take: 1,
-    skip: randomIndex,
+    skip: 2,
   });
 /*   if (contentCount === 0) {
     return new Response(null, {
