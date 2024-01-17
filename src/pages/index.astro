@@ -6,7 +6,7 @@ import Billboard from "../components/Billboard.astro";
 /* import Row from "../components/Row.astro"; */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
-const content = await fetch(`${Astro.url}.netlify/functions/random`).then((response) => response.json());
+const content = await fetch(`${Astro.url}/.netlify/functions/random`).then((response) => response.json());
 
 /* const data = await fetch(`${Astro.url}api/random`).then((response) => response.json()); */
 
