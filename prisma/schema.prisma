@@ -8,7 +8,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url= "mongodb+srv://protones:Pim_Pam_Pum24680@cluster0.owolmg3.mongodb.net/ColibraPlay"
+  url= env("DATABASE_URL")
 
   //env("DATABASE_URL")
 }
