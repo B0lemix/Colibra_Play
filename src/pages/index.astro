@@ -6,7 +6,10 @@ import Billboard from "../components/Billboard.astro";
 /* import Row from "../components/Row.astro"; */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+import ContentList from "../components/ContentList.astro";
 const content = await fetch(`${Astro.url}api/random`).then((response) => response.json());
+const movies = await fetch(`${Astro.url}api/getMovies`).then((response) => response.json());
+
 
 /* const data = await fetch(`${Astro.url}api/random`).then((response) => response.json()); */
 
@@ -43,6 +46,13 @@ const content = await fetch(`${Astro.url}api/random`).then((response) => respons
  
 
    <Billboard data={content} />
+   <div class="pb-40">
+    <ContentList data={movies} title="Populares" />
+    <ContentList data={movies} title="Documentales" />
+    <ContentList data={movies} title="Radios Online" />
+    <ContentList data={movies} title="Podcasts" />
+    <ContentList data={movies} title="Videos" />
+   </div>
     
 
 <!--     <Row title="Popular en Colibra Play" data={content} />
