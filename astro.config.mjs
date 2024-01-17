@@ -7,4 +7,5 @@ import node from '@astrojs/node';
 export default defineConfig({
   output: 'static',
   integrations: [tailwind()],
+  adapter:node()
 });
