@@ -1,14 +1,11 @@
-import prismadb from "../../../lib/prismadb";
+import data from "../../../data/data.json";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ params, request }) => {
-  const contentCount = await prismadb.content.count();
+  const contentCount = data.length;
   const randomIndex = Math.floor(Math.random() * contentCount);
 
-  const randomContent = await prismadb.content.findMany({
-    take: 1,
-    skip: randomIndex,
-  });
+  const randomContent = data[randomIndex];
 
   if (contentCount === 0) {
     return new Response(null, {
@@ -18,11 +15,9 @@ export const GET: APIRoute = async ({ params, request }) => {
   }
 
   /* JSON.stringify(randomContent[0]) */
-  return new Response(JSON.stringify(randomContent[0]), {
+  return new Response(JSON.stringify(randomContent), {
     status: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*", // Replace * with the appropriate domain
-      "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json",
     },
   });
