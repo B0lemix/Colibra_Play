@@ -1,44 +1,14 @@
 import prismadb from "../../../lib/prismadb";
 import type { APIRoute } from "astro";
- 
-export const GET: APIRoute = async  ({  params, request  })  =>  {
-/*  const contentCount = await prismadb.content.count();
- const randomIndex = Math.floor(Math.random() * contentCount); */
 
-/*   const randomContent = await prismadb.content.findMany({
-    take: 1,
-    skip: randomIndex,
-  }); */
-  const randomContent = await prismadb.content.findMany({});
-/*   if (contentCount === 0) {
-    return new Response(null, {
-      status: 404,
-      statusText: "No Encontrado",
-    });
-  } */
-
-/* JSON.stringify(randomContent[0]) */
- return new Response(JSON.stringify(randomContent), {
-    status: 200,
-   headers: {
-    'Access-Control-Allow-Origin': '*', // Replace * with the appropriate domain
-    'Access-Control-Allow-Headers': 'Content-Type',
-      "Content-Type": "application/json",
-    },
-  });
-};
-
-
-
-/* 
-export async function GET({  params, request  }) {
+export const GET: APIRoute = async ({ params, request }) => {
   const contentCount = await prismadb.content.count();
   const randomIndex = Math.floor(Math.random() * contentCount);
 
   const randomContent = await prismadb.content.findMany({
     take: 1,
     skip: randomIndex,
-  });;
+  });
 
   if (contentCount === 0) {
     return new Response(null, {
@@ -47,10 +17,13 @@ export async function GET({  params, request  }) {
     });
   }
 
+  /* JSON.stringify(randomContent[0]) */
   return new Response(JSON.stringify(randomContent[0]), {
     status: 200,
     headers: {
+      "Access-Control-Allow-Origin": "*", // Replace * with the appropriate domain
+      "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json",
     },
   });
-} */
+};
