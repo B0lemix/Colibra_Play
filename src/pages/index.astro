@@ -6,7 +6,7 @@ import Billboard from "../components/Billboard.astro";
 /* import Row from "../components/Row.astro"; */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
-
+const content = await fetch(`${Astro.url}api/random.json`).then((response) => response.json());
 
 /* const data = await fetch(`${Astro.url}api/random`).then((response) => response.json()); */
 
@@ -23,7 +23,7 @@ import Navbar from "../components/Navbar.astro";
  */
 /* const content = await getData(); */
 
-const content = {
+/* const content = {
   id: '659afe4de4b85c62b6ff7d1f',
   type: 'Movie',
   title: 'Big Buck Bunny',
@@ -32,7 +32,7 @@ const content = {
   genre: 'Comedy',
   duration: '10 minutes',
   thumbnailUrl: 'http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg'
-}
+} */
 
 
 ---
