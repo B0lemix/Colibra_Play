@@ -5,6 +5,7 @@ import Row from "./Row.astro";
 
 interface Props {
   data: {
+    contentId: string;
     type: string;
     title: string;
     description: string;
@@ -16,7 +17,6 @@ interface Props {
 }
 
 const { data } = Astro.props;
-
 ---
 
 <section class="relative h-[56.25vw]">
@@ -40,6 +40,10 @@ const { data } = Astro.props;
     >
       {data?.description}
     </p>
+    <div class="flex flex-row items-center mt-3 md:mt-4 gap-1">
+      <BotonReproducir ContentId={data.contentId} />
+ <!--      <BotonInformacion data={data} /> -->
+    </div>
   </div>
 </section>
 

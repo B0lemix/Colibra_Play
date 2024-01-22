@@ -1,11 +1,29 @@
-<button
-  class="flex flex-row gap-4 p-4 bg-white/20 rounded-md items-center hover:scale-110 hover:opacity-90 duration-300 transition-all cursor-pointer"
+---
+interface Props {
+  ContentId?: string;
+}
+
+const { ContentId } = Astro.props;
+
+/* const contentData = await fetch(`${Astro.url.origin}/api/${ContentId}`).then(
+  (response) => response.json()
+);
+console.log(contentData,"data");
+console.log(ContentId); */
+
+/* const { data } = Astro.props; */
+---
+
+<!-- {console.log(data)} --><!-- <InfoModal ContentId={ContentId} showModal="showModal"/>  --><!--   <InfoModal ContentId={ContentId} showModal="showModal"/>  -->
+<a
+  class="flex flex-row scale-75 gap-4 p-4 bg-white/20 rounded-md items-center hover:scale-90 hover:opacity-90 duration-300 transition-all cursor-pointer"
+  href=`/info/${ContentId}`
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="text-gray-300"
-    width="84"
-    height="84"
+    width="40"
+    height="40"
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="CurrentColor"
@@ -20,4 +38,4 @@
   </svg>
 
   <span class="text-gray-300 text-lg font-bold">Más Información</span>
-</button>
+</a>

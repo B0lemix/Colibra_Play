@@ -7,14 +7,18 @@ import Billboard from "../components/Billboard.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import ContentList from "../components/ContentList.astro";
-const content = await fetch(`${Astro.url}api/random`).then((response) => response.json());
-const movies = await fetch(`${Astro.url}api/getMovies`).then((response) => response.json());
-
+import InfoModal from "../components/InfoModal.astro";
+const content = await fetch(`${Astro.url}api/random`).then((response) =>
+  response.json()
+);
+const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
+  response.json()
+);
 
 /* const data = await fetch(`${Astro.url}api/random`).then((response) => response.json()); */
 
 /* const data = `${Astro.url}api/random` */
-/* console.log(data,"url"); */
+
 
 /* const getData =  async () => {
   const response =  await fetch(`${Astro.url}/api/random`)
@@ -36,26 +40,26 @@ const movies = await fetch(`${Astro.url}api/getMovies`).then((response) => respo
   duration: '10 minutes',
   thumbnailUrl: 'http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg'
 } */
-
-
 ---
 
 <Layout title="Colibra Play">
-  <main class="w-full h-screen">
+  <main class="w-full h-screen" x-data="{ 'showModal': false }">
+
+    <!--   <InfoModal data={movies[0]} showModal="showModal" /> -->
+
+
     <Navbar />
- 
 
-   <Billboard data={content} />
-   <div class="pb-40">
-    <ContentList data={movies} title="Populares" />
-    <ContentList data={movies} title="Documentales" />
-    <ContentList data={movies} title="Radios Online" />
-    <ContentList data={movies} title="Podcasts" />
-    <ContentList data={movies} title="Videos" />
-   </div>
-    
+    <Billboard data={content} />
+    <div class="pb-40">
+      <ContentList data={movies} title="Populares" />
+      <ContentList data={movies} title="Documentales" />
+      <ContentList data={movies} title="Radios Online" />
+      <ContentList data={movies} title="Podcasts" />
+      <ContentList data={movies} title="Videos" />
+    </div>
 
-<!--     <Row title="Popular en Colibra Play" data={content} />
+    <!--     <Row title="Popular en Colibra Play" data={content} />
 
     <Row title="Documentales" data={content} />
 

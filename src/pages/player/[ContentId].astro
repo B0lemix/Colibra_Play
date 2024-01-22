@@ -1,0 +1,43 @@
+---
+interface Props {
+  ContentId: string;
+}
+
+const { ContentId } = Astro.params;
+
+const contentData = await fetch(`${Astro.url.origin}/api/${ContentId}`).then(
+  (response) => response.json()
+);
+
+import Video from "../../components/Video.astro";
+import Inicio from "../../components/Iconos/Inicio.astro";
+import BackButton from "../../components/Iconos/BackButton.astro";
+---
+
+<section class="bg-black w-screen h-screen">
+  <nav
+    class="fixed w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70"
+  >
+    <a
+      class="text-white hover:scale-150 hover:text-gray-300 cursor-pointer transition duration-300 ease-out"
+      href="/"><BackButton width="40" height="40" /></a
+    >
+
+    <p class="text-white text-xl md:text-3xl font-bold">
+      <span class="font-light"> Reproduciendo:</span>
+      {contentData?.title}
+    </p>
+  </nav>
+
+  <video
+    autoplay
+    controls
+    class="h-full w-full pt-11"
+    src={contentData?.contentUrl}></video>
+
+  <!--   <article>
+    <Video />
+  </article>
+</section>
+ -->
+</section>

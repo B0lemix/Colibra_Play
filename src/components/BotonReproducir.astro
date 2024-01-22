@@ -1,5 +1,15 @@
-<button
-  class="flex flex-row gap-4 p-4 bg-white rounded-md items-center hover:scale-110 hover:opacity-90 duration-300 transition-all cursor-pointer"
+---
+interface Props {
+  ContentId?: string;
+
+}
+
+const { ContentId } = Astro.props;
+---
+
+<a
+  class="flex flex-row gap-4 p-4 scale-75 bg-white rounded-md items-center hover:scale-90 hover:opacity-90 duration-300 transition-all cursor-pointer"
+  href=`/player/${ContentId}`
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +31,4 @@
   </svg>
 
   <span class="text-gray-800 text-lg font-bold">Reproducir</span>
-</button>
+</a>

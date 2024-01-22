@@ -7,6 +7,9 @@ export default {
 			fontFamily: {
 				workSans: ["WorkSans", "sans-serif"],
 			},
+			width: {
+				96: '24rem',
+			  },
 		}
 	},
 	plugins: [],
