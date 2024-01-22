@@ -9,5 +9,8 @@
     "resolveJsonModule": true,
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true
+/*     // Astro will directly run your TypeScript code, no transpilation needed.
+    "noEmit": true */
   }
 }
