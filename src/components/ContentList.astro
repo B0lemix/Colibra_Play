@@ -2,7 +2,8 @@
 import ContentCard from "./ContentCard.astro";
 
 interface Props {
-  /*   data: {
+  data: {
+    contentId: string;
     type: string;
     title: string;
     description: string;
@@ -10,9 +11,9 @@ interface Props {
     genre: string;
     duration: string;
     thumbnailUrl: string;
-  }; */
-  data: Record<string, any>[];
+  }[];
   title: string;
+
 }
 
 const { data, title } = Astro.props;
@@ -25,7 +26,7 @@ const { data, title } = Astro.props;
     </p>
 
     <div class="grid grid-cols-4 gap-2">
-      {data.map((content) => <ContentCard key={content.id} data={content} />)}
+      {data.map((content) =>( <ContentCard  data={content} />))}
     </div>
   </div>
 </div>

@@ -14,14 +14,13 @@ interface Props {
     genre: string;
     duration: string;
     thumbnailUrl: string;
-  }; 
-  key: string;
+  }
 }
 
 
 
 
-const { data, key } = Astro.props;
+const {data } = Astro.props;
 
 console.log(data.contentId,"id");
 ---
