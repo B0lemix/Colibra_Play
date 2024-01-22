@@ -1,7 +1,9 @@
 ---
 import BotonReproducir from "../../components/BotonReproducir.astro";
 import CloseButton from "../../components/Iconos/CloseButton.astro";
+import Layout from "../../layouts/Layout.astro";
 
+import { fade } from "astro:transitions";
 interface Props {
   ContentId: string;
 }
@@ -11,55 +13,67 @@ const { ContentId } = Astro.params;
 const contentData = await fetch(`${Astro.url.origin}/api/${ContentId}`).then(
   (response) => response.json()
 );
-
-import Video from "../../components/Video.astro";
-import Inicio from "../../components/Iconos/Inicio.astro";
-import BackButton from "../../components/Iconos/BackButton.astro";
 ---
 
-<div
-  class="w-screen h-screen z-50 transition duration-300 bg-black bg-opacity-50 flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0"
->
-  <div class="relative w-auto mx-auto max-w-3xl rounded-md overflow-hidden">
-    <div
-      class={`scale-100 transform duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}
-    >
-      <div class="relative h-96">
-        <video
-          class="w-full brightness-[60%] object-cover h-full"
-          autoplay
-          muted
-          loop
-          poster={contentData?.thumbnailUrl}
-          src={contentData?.contentUrl}></video>
+<Layout title="Colibra Play">
+  <div
+    class="w-screen h-screen z-50 transition duration-300 bg-black bg-opacity-50 flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0"
+    transition:animate={fade({ duration: "0.8s" })}
+  >
+    <div class="relative w-auto mx-auto max-w-3xl rounded-md overflow-hidden">
+      <div
+        class={`scale-100 transform duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}
+      >
+        <div class="relative h-96">
+          <video
+            class="w-full brightness-[60%] object-cover h-full"
+            autoplay
+            muted
+            loop
+            poster={contentData?.thumbnailUrl}
+            src={contentData?.contentUrl}></video>
 
-        <button
-          data-close-button
-          class="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full hover:scale-125 bg-black bg-opacity-70 flex items-center justify-center text-white"
-          @click="showModal = false"
-        >
-          <CloseButton width="30" height="30" />
-        </button>
-
-        <div class="absolute bottom-[10%] left-10">
-          <p
-            class="text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-8"
+          <a
+            data-close-button
+            class="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full hover:scale-125 bg-black bg-opacity-70 flex items-center justify-center text-white"
+            href="javascript:history.back()"
           >
-            {contentData?.title}
-          </p>
+            <CloseButton width="30" height="30" />
+          </a>
 
-          <div class="flex flex-row gap-4 items-center">
-            <BotonReproducir ContentId={contentData?.contentId} />
+          <div class="absolute bottom-[10%] left-10">
+            <p
+              class="text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-8"
+            >
+              {contentData?.title}
+            </p>
+
+            <div class="flex flex-row gap-4 items-center">
+              <BotonReproducir ContentId={contentData?.contentId} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="px-12 py-8">
-        <p class="text-green-400 font-semibold text-lg">Novedad</p>
-        <p class="text-white text-lg">{contentData?.duration}</p>
-        <p class="text-white text-lg">{contentData?.genre}</p>
-        <p class="text-white text-lg">{contentData?.description}</p>
+        <div class="px-12 py-8">
+          <p class="text-green-400 font-semibold text-lg">Novedad</p>
+          <p class="text-white text-lg">{contentData?.duration}</p>
+          <p class="text-white text-lg">{contentData?.genre}</p>
+          <p class="text-white text-lg">{contentData?.description}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</Layout>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+
+  // Encuentra todos los botones con la clase `alert` en la página.
+  const closeButton = document.querySelector("[data-close-button]");
+
+  // Maneja los clics en cada botón.
+  closeButton.addEventListener("click", () => {
+    /*     navigate(history.back); */
+    return false;
+  });
+</script>

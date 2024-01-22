@@ -1,8 +1,7 @@
 ---
 import BotonInformacion from "./BotonInformacion.astro";
 import BotonReproducir from "./BotonReproducir.astro";
-import Play from "./Iconos/Play.astro";
-import InfoModal from "./InfoModal.astro";
+
 
 
 interface Props {
@@ -27,8 +26,6 @@ const { data, key } = Astro.props;
 console.log(data.contentId,"id");
 ---
 
-<!-- <InfoModal ContentId={data.contentId} showModal="showModal"/>  -->
-<InfoModal data={data} showModal="showModal"/> 
 <div class="group bg-zinc-900 col-span relative h-[12vw]">
   <img
     src={data.thumbnailUrl}

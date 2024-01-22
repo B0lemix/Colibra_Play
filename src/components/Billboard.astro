@@ -1,7 +1,6 @@
 ---
 import BotonReproducir from "./BotonReproducir.astro";
 import BotonInformacion from "./BotonInformacion.astro";
-import Row from "./Row.astro";
 
 interface Props {
   data: {
@@ -42,39 +41,7 @@ const { data } = Astro.props;
     </p>
     <div class="flex flex-row items-center mt-3 md:mt-4 gap-1">
       <BotonReproducir ContentId={data.contentId} />
- <!--      <BotonInformacion data={data} /> -->
+      <BotonInformacion ContentId={data.contentId} />
     </div>
   </div>
 </section>
-
-<!-- ** Portada inicial Colibra Play con títulos recomendados ** -->
-<!-- <section class="w-full h-[50rem] border-2 border-purple-400">
-  <img
-    src="/portada-prueba.jpg"
-    class="absolute w-full h-[50rem] aspect-auto -z-50"
-    alt=""
-    srcset=""
-  />
-
-  <div class="flex flex-col w-full h-full justify-start pt-28 gap-8 px-40">
-    <h1 class="text-5xl text-white">Nombre</h1>
-
-    <h2 class="text-xl text-white">categoria</h2>
-
-    <p class="text-lg text-gray-400 tracking-wide text-pretty w-2/5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-      asperiores eos dignissimos veritatis pariatur ullam vel repellendus
-      deleniti minima molestias, cum ducimus tempora facere ratione aut hic.
-      Eum, aliquid provident!
-    </p>
-
-    <div class="flex flex-row gap-8 size-16">
-      <BotonReproducir />
-      <BotonInformacion />
-
-    </div>
-
-    <Row title="Popular en Colibra Play" data={data} />
-  </div>
-</section>
- -->

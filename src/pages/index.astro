@@ -1,34 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-/* import Header from "../components/Header.astro"; */
+
 import Footer from "../components/Footer.astro";
 import Billboard from "../components/Billboard.astro";
-/* import Row from "../components/Row.astro"; */
+
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import ContentList from "../components/ContentList.astro";
-import InfoModal from "../components/InfoModal.astro";
 const content = await fetch(`${Astro.url}api/random`).then((response) =>
   response.json()
 );
 const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
   response.json()
 );
-
-/* const data = await fetch(`${Astro.url}api/random`).then((response) => response.json()); */
-
-/* const data = `${Astro.url}api/random` */
-
-
-/* const getData =  async () => {
-  const response =  await fetch(`${Astro.url}/api/random`)
-  const data =  response.json();
-  return data;
-
-
-};
- */
-/* const content = await getData(); */
 
 /* const content = {
   id: '659afe4de4b85c62b6ff7d1f',
@@ -43,11 +27,7 @@ const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
 ---
 
 <Layout title="Colibra Play">
-  <main class="w-full h-screen" x-data="{ 'showModal': false }">
-
-    <!--   <InfoModal data={movies[0]} showModal="showModal" /> -->
-
-
+  <main class="w-full h-screen">
     <Navbar />
 
     <Billboard data={content} />
@@ -58,14 +38,6 @@ const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
       <ContentList data={movies} title="Podcasts" />
       <ContentList data={movies} title="Videos" />
     </div>
-
-    <!--     <Row title="Popular en Colibra Play" data={content} />
-
-    <Row title="Documentales" data={content} />
-
-    <Row title="Radio Online" data={content} />
-
-    <Row title="Videos a la carta" data={content} /> -->
 
     <Footer />
   </main>

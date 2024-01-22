@@ -52,13 +52,13 @@ if (ContentId)
           poster={data?.thumbnailUrl}
           src={data?.contentUrl}></video>
 
-        <button
+        <a
           data-close-button
           class="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full hover:scale-125 bg-black bg-opacity-70 flex items-center justify-center text-white"
-          @click="showModal = false"
-        >
+         href="/" data-astro-reload>
+        
           <CloseButton width="30" height="30" />
-        </button>
+        </a>
 
         <div class="absolute bottom-[10%] left-10">
           <p

@@ -9,8 +9,6 @@ const contentData = await fetch(`${Astro.url.origin}/api/${ContentId}`).then(
   (response) => response.json()
 );
 
-import Video from "../../components/Video.astro";
-import Inicio from "../../components/Iconos/Inicio.astro";
 import BackButton from "../../components/Iconos/BackButton.astro";
 ---
 
@@ -34,10 +32,4 @@ import BackButton from "../../components/Iconos/BackButton.astro";
     controls
     class="h-full w-full pt-11"
     src={contentData?.contentUrl}></video>
-
-  <!--   <article>
-    <Video />
-  </article>
-</section>
- -->
 </section>
