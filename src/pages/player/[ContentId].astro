@@ -1,4 +1,8 @@
 ---
+
+import Layout from "../../layouts/Layout.astro";
+import { slide } from "astro:transitions";
+
 interface Props {
   ContentId: string;
 }
@@ -11,8 +15,8 @@ const contentData = await fetch(`${Astro.url.origin}/api/${ContentId}`).then(
 
 import BackButton from "../../components/Iconos/BackButton.astro";
 ---
-
-<section class="bg-black w-screen h-screen">
+<Layout title="Colibra Play">
+<section class="bg-black w-screen h-screen"  transition:animate={slide({ duration: "3s" })}>
   <nav
     class="fixed w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70"
   >
@@ -33,3 +37,4 @@ import BackButton from "../../components/Iconos/BackButton.astro";
     class="h-full w-full pt-11"
     src={contentData?.contentUrl}></video>
 </section>
+</Layout>
