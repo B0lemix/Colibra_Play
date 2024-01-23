@@ -24,7 +24,7 @@ const {data } = Astro.props;
 
 ---
 
-<div class="group bg-zinc-900 col-span relative h-[12vw]">
+<div class="group bg-zinc-900 col-span relative lg:h-[12vw] h-[28vw]">
   <img
     src={data.thumbnailUrl}
     alt="Thumbnail"
@@ -38,7 +38,7 @@ const {data } = Astro.props;
     sm:group-hover:opacity-0
     delay-300
     w-full
-    h-[12vw]"
+    lg:h-[12vw] h-[28vw] "
   />
 
   <div

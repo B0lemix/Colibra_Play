@@ -18,24 +18,24 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section class="relative h-[56.25vw]">
+<section class="lg:relative lg:h-[56.25vw] relative h-[50vh]">
   <video
-    class="w-full h-[56.25vw] object-cover brightness-[60%]"
+    class="w-full lg:h-[56.25vw] h-[50vh] aspect-auto object-cover brightness-[60%]"
     autoplay
     muted
     loop
     poster={data?.thumbnailUrl}
     src={data?.contentUrl}></video>
 
-  <div class="absolute top-[30%] md:top-[40%] ml-4 md:ml-16">
+  <div class="absolute top-[45%] lg:top-[40%] md:top-[40%] ml-4 md:ml-16">
     <p
-      class="text-white text-xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl"
+      class="text-white text-2xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl"
     >
       {data?.title}
     </p>
 
     <p
-      class="text-white text-[8px] md:text-lg mt-3 md:mt-8 w-[80%] md:w-{80%] lg:w-[50%] drop-shadow-xl"
+      class="text-white text-[12px] md:text-lg mt-3 md:mt-8 w-[80%] md:w-{80%] lg:w-[50%] drop-shadow-xl"
     >
       {data?.description}
     </p>

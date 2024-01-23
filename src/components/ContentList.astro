@@ -13,7 +13,6 @@ interface Props {
     thumbnailUrl: string;
   }[];
   title: string;
-
 }
 
 const { data, title } = Astro.props;
@@ -21,12 +20,14 @@ const { data, title } = Astro.props;
 
 <div class="px-4 md:px-12 mt-4 space-y-8">
   <div>
-    <p class="text-white text-md md:text-xl lg:text-2xl font-semibold mb-4">
+    <p
+      class="text-white text-lg lg:text-md md:text-xl lg:text-2xl font-semibold mb-4"
+    >
       {title}
     </p>
 
-    <div class="grid grid-cols-4 gap-2">
-      {data.map((content) =>( <ContentCard  data={content} />))}
+    <div class="grid lg:grid-cols-4 grid-cols-3 gap-2 overflow-x-scroll">
+      {data.map((content) => <ContentCard data={content} />)}
     </div>
   </div>
 </div>

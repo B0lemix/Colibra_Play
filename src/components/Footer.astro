@@ -3,22 +3,23 @@ import Instagram from '../components/Iconos/Instagram.astro'
 import Facebook from '../components/Iconos/Facebook.astro'
 import Twitter from '../components/Iconos/Twitter.astro'
 import Threads from '../components/Iconos/Threads.astro'
+import LogoMin from './Iconos/Logo-min.astro'
 ---
 
-<footer class="mx-32 p-6 flex flex-col  text-gray-500 text-lg">
+<footer class="lg:mx-32 mx-6 p-6 flex flex-col items-center justify-center  text-gray-500 text-lg">
 
-  <div class="px-80 flex flex-row gap-4 mb-10">
+  <div class="lg:px-80 flex flex-row gap-4 mb-10">
     <div class=" hover:scale-125 hover:text-white transition-all duration-300 cursor-pointer"><Instagram/></div>
     <div class=" hover:scale-125 hover:text-white transition-all duration-300 cursor-pointer"><Facebook/></div>
     <div class=" hover:scale-125 hover:text-white transition-all duration-300 cursor-pointer"><Twitter/></div>
     <div class=" hover:scale-125 hover:text-white transition-all duration-300 cursor-pointer"><Threads/></div>
   </div>
   
-  <div class="px-80 flex flex-row w-full justify-between">
+  <div class="lg:px-80 flex lg:flex-row md:flex-row flex-col w-full justify-between items-baseline lg:justify-center  gap-20">
     
     <div>
-      <span class="text-2xl">COLIBRA PLAY</span>
-      <div class="ml-3 my-2 flex flex-col gap-4">
+      <span class="text-2xl inline-flex justify-center items-center ">COLIBRA<LogoMin width='50' height='50'/>PLAY</span>
+      <div class="ml-3 my-2 flex flex-col justify-between  items-baseline gap-4">
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Inicio</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Ayuda</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Contacto</l>
@@ -29,7 +30,7 @@ import Threads from '../components/Iconos/Threads.astro'
     
     <div>
       <span class="text-2xl">MÚSICA</span>
-      <div class="ml-3 my-2 flex flex-col gap-4">
+      <div class="ml-3 my-2 flex flex-col justify-between items-baseline gap-4">
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Pop/Rock</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Electrónica</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Bandas sonoras</a>
@@ -41,7 +42,7 @@ import Threads from '../components/Iconos/Threads.astro'
     
     <div>
       <span class="text-2xl">DOCUMENTALES</span>
-      <div class="ml-3 my-2 flex flex-col gap-4">
+      <div class="ml-3 my-2 flex flex-col justify-between items-baseline gap-4">
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Historia</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Ciencia</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Tecnología</a>
@@ -53,7 +54,7 @@ import Threads from '../components/Iconos/Threads.astro'
     
     <div>
       <span class="text-2xl">AMBIENTES</span>
-      <div class="ml-3 my-2 flex flex-col gap-4">
+      <div class="ml-3 my-2 flex flex-col justify-between items-baseline gap-4">
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Naturales</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Fantasía</a>
         <a class=" hover:scale-105 hover:text-white transition-all duration-300 cursor-pointer">Históricos</a>
