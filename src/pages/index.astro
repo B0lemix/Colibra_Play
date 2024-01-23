@@ -27,18 +27,22 @@ const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
 ---
 
 <Layout title="Colibra Play">
-  <main class="w-full h-screen">
+  <main class="">
     <Navbar />
 
-    <Billboard data={content} />
-    <div class="pb-40">
-      <ContentList data={movies} title="Populares" />
-      <ContentList data={movies} title="Documentales" />
-      <ContentList data={movies} title="Radios Online" />
-      <ContentList data={movies} title="Podcasts" />
-      <ContentList data={movies} title="Videos" />
-    </div>
 
-    <Footer />
+      <Billboard data={content} />
+      <div class="pb-40">
+        <ContentList data={movies} title="Populares" />
+        <ContentList data={movies} title="Documentales" />
+        <ContentList data={movies} title="Radios Online" />
+        <ContentList data={movies} title="Podcasts" />
+        <ContentList data={movies} title="Videos" />
+      </div>
+
+      <Footer />
+
+ 
+
   </main>
 </Layout>
