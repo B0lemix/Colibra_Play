@@ -7,7 +7,7 @@ Proyecto en construccion usando Astro JS junto con Tailwind. Muestra distintas c
 
 
 
-## 🧞 Commands
+## 🧞 Comandos
 
 
 Comandos ejecutados desde la terminal en la raiz del proyecto.
