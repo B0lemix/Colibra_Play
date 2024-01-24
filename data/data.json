@@ -74,7 +74,7 @@
       "title": "Kane FM",
       "description": "Kane FM (Surrey, UK): bass, breaks, community radio, dance, drum & bass, electronic, funk, hiphop, house, jazz, live, oldies, reggae, soul, techno, trance, urban",
       "contentUrl": "http://stream.kanefm.com:1037/;stream",
-      "thumbnailUrl": "miniaturas/KaneFM_radio.jpg",
+      "thumbnailUrl": "http://localhost:4321/miniaturas/KaneFM_radio.jpg",
       "genre": "Music",
       "duration": "Unlimited",
       "type": "Radio"

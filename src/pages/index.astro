@@ -7,7 +7,7 @@ import Billboard from "../components/Billboard.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import ContentList from "../components/ContentList.astro";
-import { GET } from "./api/getMovies";
+
 const content = await fetch(`${Astro.url}api/random`).then((response) =>
   response.json()
 );
