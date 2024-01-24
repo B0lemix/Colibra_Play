@@ -38,5 +38,45 @@
       "genre": "Sci-Fi",
       "duration": "15 minutes",
       "type": "Movie"
+   },
+   {
+      "contentId": "5",
+      "title": "Route 66 Soundtrack",
+      "description": "Route 66 Soundtrack radio (Rio de Janeiro, Brazil): blues, classic rock, folk, hard rock, progressive rock, psychedelic rock.",
+      "contentUrl": "http://servidor32.brlogic.com:8056/live",
+      "thumbnailUrl": "miniaturas/Route66_radio.jpg",
+      "genre": "Music",
+      "duration": "Unlimited",
+      "type": "Radio"
+   },
+   {
+      "contentId": "6",
+      "title": "Frisky",
+      "description": "Frisky: the home of underground electronic music. (New York, US)",
+      "contentUrl": "http://stream2.friskyradio.com/frisky_mp3_hi",
+      "thumbnailUrl": "miniaturas/Frisky_radio.jpg",
+      "genre": "Music",
+      "duration": "Unlimited",
+      "type": "Radio"
+   },
+   {
+      "contentId": "7",
+      "title": "Epic Rock Radio",
+      "description": "A mix of progressive (prog), symphonic, and power metal. (Germany)",
+      "contentUrl": "https://securestreams6.autopo.st:2222/stream",
+      "thumbnailUrl": "miniaturas/EpicRock_radio.jpg",
+      "genre": "Music",
+      "duration": "Unlimited",
+      "type": "Radio"
+   },
+   {
+      "contentId": "8",
+      "title": "Kane FM",
+      "description": "Kane FM (Surrey, UK): bass, breaks, community radio, dance, drum & bass, electronic, funk, hiphop, house, jazz, live, oldies, reggae, soul, techno, trance, urban",
+      "contentUrl": "http://stream.kanefm.com:1037/;stream",
+      "thumbnailUrl": "miniaturas/KaneFM_radio.jpg",
+      "genre": "Music",
+      "duration": "Unlimited",
+      "type": "Radio"
    }
 ]

@@ -13,6 +13,9 @@ const content = await fetch(`${Astro.url}api/random`).then((response) =>
 const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
   response.json()
 );
+const radios = await fetch(`${Astro.url}api/getRadios`).then((response) =>
+  response.json()
+);
 
 /* const content = {
   id: '659afe4de4b85c62b6ff7d1f',
@@ -35,7 +38,7 @@ const movies = await fetch(`${Astro.url}api/getMovies`).then((response) =>
       <div class="pb-40">
         <ContentList data={movies} title="Populares" />
         <ContentList data={movies} title="Documentales" />
-        <ContentList data={movies} title="Radios Online" />
+        <ContentList data={radios} title="Radios Online" />
         <ContentList data={movies} title="Podcasts" />
         <ContentList data={movies} title="Videos" />
       </div>
