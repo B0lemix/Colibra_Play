@@ -25,9 +25,9 @@ const { data, title } = Astro.props;
     >
       {title}
     </p>
-
+<!-- container flex flex-col items-center justify-between h-32 flex-wrap w-full overflow-x-visible overflow-auto -->
     <div
-      class="grid lg:grid-cols-4 grid-cols-3 gap-2 overflow-x-scroll lg:overflow-visible"
+      class="lg:grid lg:grid-cols-4 grid-cols-3 gap-8 lg:overflow-visible  container flex flex-col items-center justify-between h-48 flex-wrap w-full overflow-x-visible overflow-auto "
     >
       {data.map((content) => <ContentCard data={content} />)}
     </div>
