@@ -32,9 +32,15 @@ import BackButton from "../../components/Iconos/BackButton.astro";
   </nav>
 
   <video
+  id="player"
+  oncontextmenu="return false;"
+  controlslist="nodownload"
     autoplay
     controls
     class="h-full w-full pt-11"
     src={contentData?.contentUrl}></video>
+
 </section>
 </Layout>
+
+
