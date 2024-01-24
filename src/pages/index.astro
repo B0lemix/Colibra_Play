@@ -7,6 +7,8 @@ import Billboard from "../components/Billboard.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import ContentList from "../components/ContentList.astro";
+import ContentListMobile from "../components/ContentListMobile.astro";
+import Square from "../components/square.astro";
 
 const content = await fetch(`${Astro.url}api/random`).then((response) =>
   response.json()
@@ -40,11 +42,13 @@ const podcast = await fetch(`${Astro.url}api/getPodcast`).then((response) =>
 
     <Billboard data={content} />
     <div class="pb-40">
-      <ContentList data={movies} title="Populares" />
+      <Square/>
+      <!-- <ContentListMobile data={movies} title="Populares" /> -->
+<!--       <ContentList data={movies} title="Populares" />
       <ContentList data={movies} title="Documentales" />
       <ContentList data={radios} title="Radios Online" />
       <ContentList data={podcast} title="Podcasts" />
-      <ContentList data={movies} title="Videos" />
+      <ContentList data={movies} title="Videos" /> -->
     </div>
 
     <Footer />
