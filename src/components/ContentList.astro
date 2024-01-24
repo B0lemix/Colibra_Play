@@ -18,17 +18,20 @@ interface Props {
 const { data, title } = Astro.props;
 ---
 
-<div class="px-4 md:px-12 mt-5 space-y-8">
+<div class="px-4 md:px-12 lg:mt-14 space-y-8 mt-8">
   <div>
-    <p
-      class="text-white text-lg lg:text-md md:text-xl lg:text-2xl font-semibold mb-4"
-    >
+    <p class="text-white text-xl md:text-xl lg:text-2xl font-semibold mb-4">
       {title}
     </p>
-<!-- container flex flex-col items-center justify-between h-32 flex-wrap w-full overflow-x-visible overflow-auto -->
+    <!-- container flex flex-col items-center justify-between h-32 flex-wrap w-full overflow-x-visible overflow-auto -->
     <div
-      class="lg:grid lg:grid-cols-4 grid-cols-3 gap-8 lg:overflow-visible  container flex flex-col items-center justify-between h-48 flex-wrap w-full overflow-x-visible overflow-auto "
+      class="lg:flex lg:grid-cols-4 grid-cols-3 gap-8 lg:overflow-visible container flex flex-col items-center justify-between h-48 flex-wrap w-full overflow-x-visible overflow-auto"
     >
+      <!--    <div
+      class="lg:grid lg:grid-cols-4 grid-cols-3 gap-8 lg:overflow-visible container flex flex-col items-center justify-between h-48 flex-wrap w-full overflow-x-visible overflow-auto"
+    >
+  
+  -->
       {data.map((content) => <ContentCard data={content} />)}
     </div>
   </div>
