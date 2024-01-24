@@ -1,11 +1,14 @@
-import data from "../../../data/data.json";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ params, request }) => {
-  const contentCount = data.length;
+  const response = await fetch(
+    "https://www.colibra.cloud/colibraPlay/index.php"
+  ).then((response) => response.json());
+
+  const contentCount = response.length;
   const randomIndex = Math.floor(Math.random() * contentCount);
 
-  const randomContent = data[randomIndex];
+  const randomContent = response[randomIndex];
 
   if (contentCount === 0) {
     return new Response(null, {
